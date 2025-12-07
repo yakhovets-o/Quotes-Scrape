@@ -39,7 +39,6 @@ def main(pages, output, author):
     browser = Browser(config)
     client = Client(browser, config)
     parser = Parser(browser, storage, config)
-    storage.get_quotes_by_author("J.K. Rowling")
 
     if author:
         storage.get_quotes_by_author(author=author)

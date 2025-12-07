@@ -23,7 +23,7 @@
     "path": "quotes"
   },
   "browser": {
-    "headless": true,
+    "headless": "--headless",
     "page_load_strategy": "normal",
     "window_width": 1920,
     "window_height": 1080,

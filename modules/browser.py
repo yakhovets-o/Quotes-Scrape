@@ -24,8 +24,13 @@ class Browser:
         self.retry_attempts = config.behavior.retry_attempts
         self.retry_delay = config.behavior.retry_delay
 
+        self.headless = config.browser.headless
+        self.window_width = config.browser.window_width
+        self.window_height = config.browser.window_height
+
         options = Options()
-        options.add_argument("--headless")
+        options.add_argument(self.headless)
+        options.add_argument(f"--window-size={self.window_width},{self.window_height}")
         options.add_argument(f"user-agent={UserAgent().random}")
 
         self.driver = webdriver.Chrome(options=options)
