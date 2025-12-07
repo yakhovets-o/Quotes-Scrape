@@ -1,0 +1,33 @@
+{
+  "website": {
+    "base_url": "https://quotes.toscrape.com",
+    "login_path": "/login",
+    "url_page": "{}/page/{}/"
+  },
+  "user": {
+    "username": "admin",
+    "password": "admin"
+  },
+  "behavior": {
+    "pages_to_scrape": 5,
+    "use_random_pages": true,
+    "min_page": 1,
+    "max_page": 10,
+    "wait_timeout": 10,
+    "retry_attempts": 3,
+    "retry_delay": 2
+  },
+  "files": {
+    "all_quotes": "output.json",
+    "quotes_author": "author_quotes.json",
+    "path": "quotes"
+  },
+  "browser": {
+    "headless": true,
+    "page_load_strategy": "normal",
+    "window_width": 1920,
+    "window_height": 1080,
+    "timeout": 10,
+    "poll_frequency": 0.5
+  }
+}
