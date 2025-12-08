@@ -35,24 +35,25 @@ def main(pages, output, author):
 
     logger.info("Приложение запущено")
 
+    if output:
+        config.set_all_quotes_path(output)
+        logger.info(f"Выходной файл изменен на: {output}")
+        return
+
     storage = QuoteStorage(config)
     browser = Browser(config)
     client = Client(browser, config)
     parser = Parser(browser, storage, config)
 
+
     if author:
         storage.get_quotes_by_author(author=author)
     else:
         if pages:
-            logger.info(f"Количество страниц для парсинга: {pages}")
             parser.parse_random_pages(page_count=pages)
         else:
             logger.info(f"Парсинг страниц по умолчанию")
             parser.parse_random_pages()
-
-    if output:
-        config.set_all_quotes_path(output)
-        logger.info(f"Переопределен выходной файл: {output}")
 
 if __name__ == '__main__':
     main()

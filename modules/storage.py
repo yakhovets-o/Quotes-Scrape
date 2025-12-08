@@ -27,7 +27,6 @@ class QuoteStorage:
         try:
             if not self.path_all_quotes.exists():
                 self._write_quotes()
-                logger.info("Хранилище инициализировано: %s", self.path_all_quotes)
         except Exception as e:
             logger.error("Ошибка при инициализации хранилища: %s", e)
             raise QuoteStorageError(f"Не удалось инициализировать хранилище: {e}") from e
