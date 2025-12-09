@@ -18,12 +18,12 @@
     "retry_delay": 2
   },
   "files": {
-    "all_quotes": "output.json",
+    "all_quotes": "quotes.json",
     "quotes_author": "author_quotes.json",
     "path": "quotes"
   },
   "browser": {
-    "headless": "--headless",
+    "headless": false,
     "page_load_strategy": "normal",
     "window_width": 1920,
     "window_height": 1080,

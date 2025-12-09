@@ -29,7 +29,8 @@ class Browser:
         self.window_height = config.browser.window_height
 
         options = Options()
-        options.add_argument(self.headless)
+        if self.headless:
+            options.add_argument("--headless")
         options.add_argument(f"--window-size={self.window_width},{self.window_height}")
         options.add_argument(f"user-agent={UserAgent().random}")
 

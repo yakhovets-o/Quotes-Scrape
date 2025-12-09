@@ -42,7 +42,7 @@ class FilesConfig(BaseSettings):
 class BrowserConfig(BaseSettings):
     """Конфигурация браузера"""
 
-    headless: str = Field(default="--headless")
+    headless: bool = Field(default=False)
     page_load_strategy: str = Field(default="normal")
     window_width: int = Field(default=1920, ge=800)
     window_height: int = Field(default=1080, ge=600)
